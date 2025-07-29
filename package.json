@@ -2,14 +2,18 @@
   "name": "changelogen-jira-plugin",
   "version": "0.0.0",
   "description": "JIRA integration plugin for changelogen",
-  "repository": "https://github.com/your-username/changelogen-jira-plugin",
+  "repository": "https://github.com/mmeester/changelogen-jira-plugin",
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
+  "author": {
+    "name": "Maurits Meester",
+    "email": "maurits@e-mmer.nl"
+  },
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
+      "default": "./dist/index.mjs"
     }
   },
   "types": "./dist/index.d.ts",
