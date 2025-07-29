@@ -2,7 +2,6 @@ import pkg from "../package.json" assert { type: "json" };
 
 import type { ChangelogPlugin, PluginContext } from "changelogen";
 import type { GitCommit, Reference } from "changelogen";
-import type { ResolvedChangelogConfig } from "changelogen";
 import type { JiraPluginConfig } from "./types";
 
 export type { JiraPluginConfig } from "./types";
@@ -28,10 +27,7 @@ export class JiraPlugin implements ChangelogPlugin {
     );
   }
 
-  afterCommitParsing(
-    commits: GitCommit[],
-    config: ResolvedChangelogConfig
-  ): GitCommit[] {
+  afterCommitParsing(commits: GitCommit[]): GitCommit[] {
     this.logger.debug(`Processing ${commits.length} commits for Jira tickets`);
 
     return commits.map((commit) => {

@@ -1,7 +1,15 @@
-import { createConfig } from 'eslint-config-unjs'
+import unjs from "eslint-config-unjs";
 
-export default createConfig({
+export default unjs({
+  ignores: [
+    // ignore paths
+  ],
   rules: {
-    '@typescript-eslint/no-explicit-any': 'warn'
-  }
-})
+    // rule overrides
+  },
+  markdown: {
+    rules: {
+      // markdown rule overrides
+    },
+  },
+});
