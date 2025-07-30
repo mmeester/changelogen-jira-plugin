@@ -28,11 +28,15 @@
     "conventional-commits"
   ],
   "scripts": {
+    "--- ▶️ Application Tools ---": "",
     "build": "unbuild",
     "dev": "vitest dev",
-    "lint": "eslint . && prettier -c src test",
-    "lint:fix": "eslint --fix . && prettier -w src test",
     "prepack": "pnpm build",
+    "--- 🎨 Linting | ✅ Checks ---": "",
+    "lint": "eslint . && prettier -c src test",
+    "--- 🎨 Linting | 🔧 Fix ---": "",
+    "lint:fix": "eslint --fix . && prettier -w src test",
+    "--- 🧪 Tests ---": "",
     "test": "pnpm lint && vitest run --coverage",
     "test:watch": "vitest"
   },
