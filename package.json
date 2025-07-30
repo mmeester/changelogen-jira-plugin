@@ -38,7 +38,9 @@
     "lint:fix": "eslint --fix . && prettier -w src test",
     "--- 🧪 Tests ---": "",
     "test": "pnpm lint && vitest run --coverage",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "--- 🚀 Release ": "",
+    "release": "changelogen --release --push"
   },
   "peerDependencies": {
     "changelogen": ">=0.6.0",
