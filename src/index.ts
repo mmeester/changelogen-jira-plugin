@@ -1,9 +1,13 @@
+// Package.json
 import pkg from "../package.json" assert { type: "json" };
 
+// Types - vendor
 import type { ChangelogPlugin, PluginContext } from "changelogen";
 import type { GitCommit, Reference } from "changelogen";
-import type { JiraPluginConfig } from "./types";
+import type { ConsolaInstance } from "consola";
 
+// Types - local
+import type { JiraPluginConfig } from "./types";
 export type { JiraPluginConfig } from "./types";
 
 export class JiraPlugin implements ChangelogPlugin {
@@ -11,7 +15,7 @@ export class JiraPlugin implements ChangelogPlugin {
   version = pkg.version;
 
   private config: JiraPluginConfig;
-  private logger: any;
+  private logger!: ConsolaInstance;
 
   constructor(config: JiraPluginConfig) {
     this.config = {
@@ -40,8 +44,10 @@ export class JiraPlugin implements ChangelogPlugin {
           `Found Jira tickets in commit ${commit.shortHash}: ${jiraTickets.join(", ")}`
         );
 
+        const uniqueTickets = [...new Set(jiraTickets)];
+
         // Add Jira ticket references
-        const jiraReferences: Reference[] = jiraTickets.map((ticket) => ({
+        const jiraReferences: Reference[] = uniqueTickets.map((ticket) => ({
           type: "jira-ticket" as any, // Extend the Reference type
           value: ticket,
           url: `${this.config.baseUrl}/browse/${ticket}`,
