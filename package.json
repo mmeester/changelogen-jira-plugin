@@ -1,6 +1,6 @@
 {
   "name": "changelogen-jira-plugin",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "JIRA integration plugin for changelogen",
   "repository": "https://github.com/mmeester/changelogen-jira-plugin",
   "license": "MIT",
