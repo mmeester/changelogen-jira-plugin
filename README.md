@@ -71,6 +71,7 @@ The plugin scans commit messages and bodies for JIRA ticket references that matc
 ### Example Commit Processing
 
 **Input commit:**
+
 ```
 feat: add user authentication FRONTEND-123
 
@@ -79,6 +80,7 @@ Also fixes BACKEND-456 API endpoint.
 ```
 
 **Output in changelog:**
+
 - Adds clickable links: `FRONTEND-123` → `https://company.atlassian.net/browse/FRONTEND-123`
 - Adds clickable links: `BACKEND-456` → `https://company.atlassian.net/browse/BACKEND-456`
 
